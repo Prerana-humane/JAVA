@@ -1,0 +1,11 @@
+import java.util.Scanner;
+public class conevrt_km_to_m {
+    public static void main (String args[]) {
+        System.out.println("conversion of kilometre to meter:");
+        Scanner sc= new Scanner(System.in);
+        System.out.println("enter the kilometer:");
+        float a = sc.nextFloat();
+        float kilometer= a * 1000;
+        System.out.println("meter:"+ kilometer);
+    }
+}
