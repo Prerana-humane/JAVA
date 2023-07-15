@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class student_percenatge {
+
+    public static void main(String args[])
+    {
+        System.out.println("Marks of student:");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("English:");
+        int a= sc.nextInt();
+        System.out.println("Marathi:");
+        int b= sc.nextInt();
+        System.out.println("Science:");
+        int c= sc.nextInt();
+        System.out.println("Maths:");
+        int d= sc.nextInt();
+        System.out.println("Social Science:");
+        int e= sc.nextInt();
+        int total=a+b+c+d+e;
+
+        int percentage= (total*100) / 500;
+        System.out.println("Percentage of student :" + percentage);
+    }
+}
