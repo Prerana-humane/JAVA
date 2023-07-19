@@ -1,0 +1,59 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Rock_paper_scissors {
+    public static void main(String [] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How many rounds of Rock-Paper-Scissors would you lik to play?");
+        int rounds = Integer.parseInt(sc.nextLine());
+
+        for (int i = 0; i < rounds; i++) {
+            play(sc);
+        }
+    }
+    static void play(Scanner sc) {
+        System.out.println("Make a Move! (rock/paper/scissors)");
+        String playerMove = sc.nextLine();
+
+        Random r = new Random();
+        int randomnum = r.nextInt(3);
+
+        String computermove="";
+        if (randomnum == 0) {
+            computermove = "ROCK";
+
+        } else if (randomnum == 1) {
+            computermove = "PAPER";
+        } else
+        {
+            computermove = "SCISSIORS";
+        }
+        System.out.println("computer chose" + computermove + "!");
+
+
+        if (playerMove.equals(computermove)) {
+            System.out.println("It's a draw!");
+        } else if (playerWins(playerMove, computermove)) {
+            System.out.println("Player Wins!");
+        } else {
+            System.out.println("computer Wins!");
+        }
+
+    }
+
+    static boolean playerWins(String playerMove,String computerMove)
+    {
+        if(playerMove.equals("ROCK"))
+        {
+            return computerMove.equals("scissiors");
+        }
+        else if(playerMove.equals("PAPER"))
+        {
+            return computerMove.equals("ROCK");
+        }
+        else
+        {
+            return computerMove.equals("PAPER");
+        }
+    }
+}
